@@ -2,6 +2,8 @@
 
 ### MUST
 * Labmda Expression
+* Stream
+* ParallelStream
 * Design Pattern for model (builder/factory)
 * Clean Code
   * Structure. Before even starting to write any code, think about your program: classes, functions, structures, and so forth. ...
@@ -19,6 +21,5 @@
 
 
 ### SHOULD
-
 
 ### COULD
