@@ -34,7 +34,7 @@ public class LambdaExpression {
      * https://www.netjstech.com/2015/06/lambda-expression-examples-in-java-8.html
      */
     @Test
-    public void  simple1(){
+    public void simple1() {
         Integer i;
 //        System.out.println(()->5);
 //        i = () -> 10;
@@ -46,54 +46,72 @@ public class LambdaExpression {
      */
 
     @Test
-    void runnable(){
-        new Thread(()-> System.out.println("Runnable Lambda")).start();
+    void runnable() {
+        new Thread(() -> System.out.println("Runnable Lambda")).start();
     }
 
     @Test
-    void sort(){
-        List<String> list=Arrays.asList("Test","Mohammad","Ali");
-        logger.info("before ordering:{}",list);
-        Collections.sort(list,(String a,String b)->a.compareTo(b));
-        logger.info("after ordering:{}",list);
+    void sort() {
+        List<String> list = Arrays.asList("Test", "Mohammad", "Ali");
+        logger.info("before ordering:{}", list);
+        Collections.sort(list, (String a, String b) -> a.compareTo(b));
+        logger.info("after ordering:{}", list);
     }
 
     @Test
-    void print(){
-        List<String> list=Arrays.asList("Test","Mohammad","Ali");
-        list.forEach((st)-> System.out.println(String.format("<<%s>>",st)));
+    void print() {
+        List<String> list = Arrays.asList("Test", "Mohammad", "Ali");
+        list.forEach((st) -> System.out.println(String.format("<<%s>>", st)));
     }
 
     @Test
-    void functionalInterface(){
+    void functionalInterface() {
         List<Person> persons = new ArrayList<Person>();
         IPerson iPerson = Person::new;
-        persons.add( iPerson.create("Mohammad","Ramezani",5,'M') );
-        persons.add( iPerson.create("Ali","Ramezani",5,'M') );
-        persons.add( iPerson.create("Narges","Haghighat",39,'F') );
-        persons.add( iPerson.create("Adel","Ramezani",45,'M') );
+        persons.add(iPerson.create("Mohammad", "Ramezani", 5, 'M'));
+        persons.add(iPerson.create("Ali", "Ramezani", 5, 'M'));
+        persons.add(iPerson.create("Narges", "Haghighat", 39, 'F'));
+        persons.add(iPerson.create("Adel", "Ramezani", 45, 'M'));
 
-        persons.forEach((p)->logger.info("person: {}",p));
+        persons.forEach((p) -> logger.info("person: {}", p));
     }
-    
-    @Test
-    void predicator(){
-        List<Person> persons = new ArrayList<Person>();
-        persons.add( new Person("Mohammad","Ramezani",5,'M') );
-        persons.add( new Person("Ali","Ramezani",5,'M') );
-        persons.add( new Person("Narges","Haghighat",39,'F') );
-        persons.add( new Person("Adel","Ramezani",45,'M') );
 
-        Predicate<Person> allChildren = p -> p.getAge()<10;
-        Predicate<Person> allFemales = p -> p.getGender()=='F';
+    @Test
+    void predicator() {
+        List<Person> persons = new ArrayList<Person>();
+        persons.add(new Person("Mohammad", "Ramezani", 5, 'M'));
+        persons.add(new Person("Ali", "Ramezani", 5, 'M'));
+        persons.add(new Person("Narges", "Haghighat", 39, 'F'));
+        persons.add(new Person("Adel", "Ramezani", 45, 'M'));
+
+        Predicate<Person> allChildren = p -> p.getAge() < 10;
+        Predicate<Person> allFemales = p -> p.getGender() == 'F';
 
         List<Person> children = new ArrayList<Person>();
-        persons.forEach(p-> {if(allChildren.test(p))children.add(p); } );
-        logger.info("children: {}",children);
+        persons.forEach(p -> {
+            if (allChildren.test(p)) children.add(p);
+        });
+        logger.info("children: {}", children);
 
         List<Person> females = new ArrayList<Person>();
-        persons.forEach(p-> {if(allFemales.test(p))females.add(p); } );
-        logger.info("females: {}",females);
+        persons.forEach(p -> {
+            if (allFemales.test(p)) females.add(p);
+        });
+        logger.info("females: {}", females);
+    }
+
+    @Test
+    void factorial() {
+        IFunc factorial = (num) -> {
+            int fact = 1;
+            for (int i = 1; i <= num; i++) {
+                fact = i * fact;
+            }
+            return fact;
+        };
+
+        int n_fact = factorial.getValue(5);
+        logger.info("factorial({})={}", 5, n_fact);
     }
 }
 
@@ -170,8 +188,7 @@ interface IPerson {
     Person create(String firstName, String lastName, int age, char gender);
 }
 
-
-
-/******
- * predicator prerequisits
- */
+@FunctionalInterface
+interface IFunc{
+    int getValue(int num);
+}
