@@ -1,0 +1,34 @@
+<div id="standard_task_description" class="TaskDescription__StandardTaskDescription-sc-7m9k5q-3 kYBmZu protected standard-task-description"><h2 class="mod-hidden">Task description</h2><div class="TaskDescription__TaskContentWrapper-sc-7m9k5q-2 bOOgkH task-description-content">
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+<div class="brinza-task-description">
+<p>We are given a two-dimensional board of size N × M (N rows and M columns). Each field of the board can be empty ('.'), may contain an obstacle ('X') or may have a character in it. The character might be either an assassin ('A') or a guard. Each guard stands still and looks straight ahead, in the direction they are facing.</p>
+<p>Every guard looks in one of four directions (up, down, left or right on the board) and is represented by one of four symbols. A guard denoted by '&lt;' is looking to the left; by '&gt;', to the right; '^', up; or 'v', down. The guards can see everything in a straight line in the direction in which they are facing, as far as the first obstacle ('X' or any other guard) or the edge of the board.</p>
+<p>The assassin can move from the current field to any other empty field with a shared edge. The assassin cannot move onto fields containing obstacles or enemies.</p>
+<p>Write a function:</p>
+<blockquote><p style="font-family: monospace; font-size: 9pt; display: block; white-space: pre-wrap"><tt>class Solution { public boolean solution(String[] B); }</tt></p></blockquote>
+<p>that, given an array B consisting of N strings denoting rows of the array, returns <tt style="white-space:pre-wrap">true</tt> if is it possible for the assassin to sneak from their current location to the bottom-right cell of the board undetected, and <tt style="white-space:pre-wrap">false</tt> otherwise.</p>
+<p><b>Examples:</b></p>
+<p>1. Given B = ["<tt style="white-space:pre-wrap">X.....&gt;</tt>", "<tt style="white-space:pre-wrap">..v..X.</tt>", "<tt style="white-space:pre-wrap">.&gt;..X..</tt>", "<tt style="white-space:pre-wrap">A......</tt>"], your function should return <tt style="white-space:pre-wrap">false</tt>. All available paths lead through a field observed by a guard.</p>
+<p><img class="inline-description-image" src="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/assassins_stealth/static/images/auto/d52a492419cc07d862b3d0a2ef192e0f.png" alt="Graphical representation of the first example"></p>
+<p>2. Given B = ["<tt style="white-space:pre-wrap">...Xv</tt>", "<tt style="white-space:pre-wrap">AX..^</tt>", "<tt style="white-space:pre-wrap">.XX..</tt>"], your function should return <tt style="white-space:pre-wrap">true</tt>. The guard in the second row is blocking the other one from watching the bottom-right square.</p>
+<p><img class="inline-description-image" src="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/assassins_stealth/static/images/auto/50bdb0bf398e005ef70466997091dc8c.png" alt="Graphical representation of the second example"></p>
+<p>3. Given B = ["<tt style="white-space:pre-wrap">...</tt>", "<tt style="white-space:pre-wrap">&gt;.A</tt>"], your function should return <tt style="white-space:pre-wrap">false</tt>, as the assassin gets spotted right at the start.</p>
+<p><img class="inline-description-image" src="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/assassins_stealth/static/images/auto/19f91467f0798bc77e892c93b044d9ad.png" alt="Graphical representation of the third example"></p>
+<p>4. Given B = ["<tt style="white-space:pre-wrap">A.v</tt>", <tt style="white-space:pre-wrap">...</tt>"], your function should return <tt style="white-space:pre-wrap">false</tt>. It's not possible for the assassin to enter the bottom-right cell undetected, as the cell is observed.</p>
+<p><img class="inline-description-image" src="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/assassins_stealth/static/images/auto/e1ddb16c62e0dc8bc44e0abc573e7843.png" alt="Graphical representation of the fourth example"></p>
+<p>Write an <b><b>efficient</b></b> algorithm for the following assumptions:</p>
+<blockquote><ul style="margin: 10px;padding: 0px;"><li>N is an integer within the range [<span class="number">1</span>..<span class="number">500</span>];</li>
+<li>all strings in B are of the same length M from range [1..500];</li>
+<li>there is exactly one assassin on the board;</li>
+<li>there is no guard or wall on B[N−1][M−1];</li>
+<li>every string in B consists only of the following characters '.', 'X', '&lt;', '&gt;', 'v', '^' and/or 'A'.</li>
+</ul>
+</blockquote></div>
+<div style="margin-top:5px">
+<small>Copyright 2009–2022 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.</small>
+</div>
+
+</div></div>

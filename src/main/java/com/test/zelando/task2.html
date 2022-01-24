@@ -1,0 +1,20 @@
+<div class="brinza-task-description">
+    <p>A string S consisting of the letters <tt style="white-space:pre-wrap">A</tt>, <tt style="white-space:pre-wrap">B</tt>, <tt style="white-space:pre-wrap">C</tt> and <tt style="white-space:pre-wrap">D</tt> is given. The string can be transformed either by removing a letter <tt style="white-space:pre-wrap">A</tt> together with an adjacent letter <tt style="white-space:pre-wrap">B</tt>, or by removing a letter <tt style="white-space:pre-wrap">C</tt> together with an adjacent letter <tt style="white-space:pre-wrap">D</tt>.</p>
+    <p>Write a function:</p>
+    <blockquote><p style="font-family: monospace; font-size: 9pt; display: block; white-space: pre-wrap"><tt>class Solution { public String solution(String S); }</tt></p></blockquote>
+    <p>that, given a string S consisting of N characters, returns any string that:</p>
+    <blockquote><ul style="margin: 10px;padding: 0px;"><li>can be obtained from S by repeatedly applying the described transformation, and</li>
+        <li>cannot be further transformed.</li>
+    </ul>
+    </blockquote><p>If at some point there is more than one possible way to transform the string, any of the valid transformations may be chosen.</p>
+    <p><b><b>Examples:</b></b></p>
+    <p>1. Given S = "CBACD", the function may return "C", because one of the possible sequences of operations is as follows:</p>
+    <p><img class="inline-description-image" src="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/erase_adjacent_letters/static/images/auto/8ad5928ec25f6d911e5886a64660a84b.png" alt="The picture describes the first example test: CBACD to CBA to C."></p>
+    <p>2. Given S = "CABABD" the function may return an empty string, because one possible sequence of operations is:</p>
+    <p><img class="inline-description-image" src="https://codility-frontend-prod.s3.amazonaws.com/media/task_static/erase_adjacent_letters/static/images/auto/66226488b9cde1960d0600f5f6c6992f.png" alt="The picture describes the second example test: CABABD to CABD to CD to empty"></p>
+    <p>3. Given string S = "ACBDACBD" the function should return "ACBDACBD", because no operation can be applied to string S.</p>
+    <p>Write an <b><b>efficient</b></b> algorithm for the following assumptions:</p>
+    <blockquote><ul style="margin: 10px;padding: 0px;"><li>the length of S is within the range [<span class="number">0</span>..<span class="number">250,000</span>];</li>
+        <li>string S consists only of the following characters: "<tt style="white-space:pre-wrap">A</tt>", "<tt style="white-space:pre-wrap">B</tt>", "<tt style="white-space:pre-wrap">C</tt>" and/or "<tt style="white-space:pre-wrap">D</tt>".</li>
+    </ul>
+    </blockquote></div>
