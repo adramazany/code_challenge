@@ -3,7 +3,7 @@ package com.test.code_challenge;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class CodeChallengeApplication {
 
     public static void main(String[] args) {

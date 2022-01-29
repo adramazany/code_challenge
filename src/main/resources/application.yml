@@ -1,0 +1,15 @@
+spring:
+  datasource:
+#    url: jdbc:h2:D:/workspace/code_challenge/src/main/resources/booking
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+#      schema: schema.sql
+#      data: data.sql
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:D:/workspace/code_challenge/src/main/resources/booking;AUTO_SERVER=true;AUTO_SERVER_PORT=8020;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL
+#      jdbc-url: jdbc:h2:file:~/${h2dbname:sam-h2-db};AUTO_SERVER=true;AUTO_SERVER_PORT=${h2dbport:8020};DB_CLOSE_ON_EXIT=FALSE;MODE=DB2
+      username:
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: update
