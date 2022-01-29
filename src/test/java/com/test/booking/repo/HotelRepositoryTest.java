@@ -1,6 +1,7 @@
 package com.test.booking.repo;
 
 import com.test.booking.config.BookingConfiguration;
+import com.test.booking.model.City;
 import com.test.booking.model.Hotel;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -38,8 +39,8 @@ class HotelRepositoryTest {
     @Test
     void testUpdate(){
         Hotel hotel = new Hotel();
-//        hotel.setHotelId(1);
-        hotel.setCityId(1);
+        hotel.setHotelId(1);
+        hotel.setCity(new City(1));
         hotel.setRate(1);
         hotel.setName("hotel11");
         hotelRepository.update(hotel);

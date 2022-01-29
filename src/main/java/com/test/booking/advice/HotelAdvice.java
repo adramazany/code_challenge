@@ -22,12 +22,4 @@ public class HotelAdvice {
         return ex.getMessage();
     }
 
-/*
-    @ResponseBody
-    @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    String exceptionHandler(Exception ex){
-        return "General failure: "+ex.getMessage();
-    }
-*/
 }

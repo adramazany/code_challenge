@@ -20,7 +20,7 @@ public class HotelController {
     @Autowired
     HotelRepository hotelRepository;
 
-    @GetMapping("/")
+    @GetMapping()
     List<Hotel> all(){
         return hotelRepository.findAll();
     }
@@ -31,7 +31,7 @@ public class HotelController {
                 .orElseThrow(()-> new HotelNotFoundException(id));
     }
 
-    @PostMapping("/")
+    @PostMapping()
     Hotel newHotel(@RequestBody Hotel hotel){
         return hotelRepository.save(hotel);
     }
@@ -42,7 +42,7 @@ public class HotelController {
                 .map(hotel -> {
                     hotel.setName(newHotel.getName());
                     hotel.setRate(newHotel.getRate());
-                    hotel.setCityId(newHotel.getCityId());
+                    hotel.setCity(newHotel.getCity());
                     return hotelRepository.save(hotel);
                 })
                 .orElseGet(()-> {

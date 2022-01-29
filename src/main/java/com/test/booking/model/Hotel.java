@@ -21,7 +21,10 @@ public class Hotel {
     Integer hotelId;
     String name;
     Integer rate;
-    Integer cityId;
+//    Integer cityId;
+    @ManyToOne
+    @JoinColumn(name="cityId")
+    City city;
 
     public Integer getHotelId() {
         return hotelId;
@@ -47,12 +50,12 @@ public class Hotel {
         this.rate = rate;
     }
 
-    public Integer getCityId() {
-        return cityId;
+    public City getCity() {
+        return city;
     }
 
-    public void setCityId(Integer cityId) {
-        this.cityId = cityId;
+    public void setCity(City city) {
+        this.city = city;
     }
 
     @Override
@@ -61,7 +64,7 @@ public class Hotel {
                 "hotelId=" + hotelId +
                 ", name='" + name + '\'' +
                 ", rate=" + rate +
-                ", cityId=" + cityId +
+                ", city=" + city +
                 '}';
     }
 }

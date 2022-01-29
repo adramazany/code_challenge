@@ -1,2 +1,41 @@
 ###
+GET http://localhost:8080/hotels
+Accept: application/json
+###
 GET http://localhost:8080/hotels/1
+###
+GET http://localhost:8080/hotels/111
+###
+POST http://localhost:8080/hotels
+Content-Type: application/json
+
+{
+  "name": "hotel_api_100",
+  "rate": 1,
+  "cityId": 1
+}
+
+###
+PUT http://localhost:8080/hotels/8
+Content-Type: application/json
+
+{
+  "name": "hotel_api_8",
+  "rate": 1,
+  "cityId": 1
+}
+
+###
+PUT http://localhost:8080/hotels/1
+Content-Type: application/json
+
+{
+  "hotelId": 1,
+  "name": "hotel_api_1",
+  "rate": 1,
+  "cityId": 1
+}
+###
+DELETE http://localhost:8080/hotels/8
+###
+DELETE http://localhost:8080/hotels/11
