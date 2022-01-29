@@ -10,9 +10,11 @@ POST http://localhost:8080/hotels
 Content-Type: application/json
 
 {
-  "name": "hotel_api_100",
+  "name": "hotel_api_101",
   "rate": 1,
-  "cityId": 1
+  "city": {
+    "cityId": 3
+  }
 }
 
 ###
@@ -33,7 +35,9 @@ Content-Type: application/json
   "hotelId": 1,
   "name": "hotel_api_1",
   "rate": 1,
-  "cityId": 1
+  "city": {
+    "cityId": 2
+  }
 }
 ###
 DELETE http://localhost:8080/hotels/8
