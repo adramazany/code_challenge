@@ -5,7 +5,10 @@ package com.test.booking.config;
  * @author adel.ramezani (adramazany@gmail.com)
  */
 
+import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -28,4 +31,11 @@ public class BookingConfiguration {
 //                .build();
 //    }
 
+    @Bean
+    @ConfigurationProperties("app.datasource")
+    public DataSource dataSource(){
+        return (HikariDataSource) DataSourceBuilder.create()
+                .type(HikariDataSource.class).build()
+                ;
+    }
 }

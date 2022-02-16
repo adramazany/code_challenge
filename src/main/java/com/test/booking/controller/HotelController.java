@@ -9,6 +9,8 @@ import com.test.booking.exception.HotelNotFoundException;
 import com.test.booking.model.Hotel;
 import com.test.booking.repo.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +23,10 @@ public class HotelController {
     HotelRepository hotelRepository;
 
     @GetMapping()
-    List<Hotel> all(){
-        return hotelRepository.findAll();
+    List<Hotel> all(Hotel hotel){
+//        return hotelRepository.findAll();
+        return hotelRepository.findAll(Example.of(hotel)
+                , Sort.by(Sort.Direction.ASC,"id"));
     }
 
     @GetMapping("/{id}")
