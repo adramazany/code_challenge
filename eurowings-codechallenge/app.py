@@ -26,11 +26,11 @@ api.add_resource(ReportsApi,'/reports/<report>')
 def welcome_page():
     return '<h1>Welcome to eurowings Data Engineering Challenge Practical Assignment</h2>'
 
-Scheduler().start()
-
 if __name__ == '__main__':
-    # app.run(host=config.host, port=config.port, debug=True)
-    app.run(debug=True)
+    app.run(host=config.host, port=config.port)
+    # app.run(debug=True)
+
+    Scheduler().start()
 
 
 # curl -X GET -i http://localhost:5000/searches
