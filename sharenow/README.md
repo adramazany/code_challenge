@@ -38,4 +38,15 @@ to real customers and might have to maintain it in the future.
 We hope you have a lot of fun during this challenge and getting a taste of how it
 feels to work with real cars on the road!
 We’re looking forward to seeing your code.
-Good luck - the SHARE NOW team
+
+
+### Issues
+* display ploygons.json
+* identify car location's pologon
+* in-memory nosql database (mybe redis) 
+* getting cars new location
+* api of car with geo loc
+* aip of geo loc with cars in it
+* test cases
+* readme
+* docker image
