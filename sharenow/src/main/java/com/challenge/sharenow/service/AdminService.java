@@ -12,6 +12,7 @@ import com.challenge.sharenow.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,7 +23,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
-public class GeoService {
+public class AdminService {
 
     @Autowired
     VehicleRepository vehicleRepository;
@@ -35,6 +36,7 @@ public class GeoService {
 
     @Value("${sharenow.vehicles_url}")
     String vehicles_url;
+
 
     public void refreshVehicles(String location){
         RestTemplate restTemplate = new RestTemplate();
@@ -70,5 +72,9 @@ public class GeoService {
         }
     }
 
+    @Scheduled(fixedDelay = 600000)
+    void refreshVehiclesStuttgart(){
+        refreshVehicles("Stuttgart");
+    }
 
 }

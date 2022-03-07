@@ -18,8 +18,4 @@ class VehicleRepositoryTest {
     @Autowired
     VehicleRepository vehicleRepository;
 
-    @Test
-    void refresh() {
-        vehicleRepository.refresh("Stuttgart");
-    }
 }

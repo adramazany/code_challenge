@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,7 +25,7 @@ class PolygonRepositoryTest {
 
     @Test
     void getGeoPolygons() {
-        List<GeoPolygon> geoPolygons =polygonRepository.getGeoPolygons();
+        HashMap<String,GeoPolygon> geoPolygons =polygonRepository.getGeoPolygons();
         assertEquals(geoPolygons.size(),154);
     }
 

@@ -9,6 +9,7 @@ package com.challenge.sharenow.model;
  */
 
 import com.challenge.sharenow.util.GeoUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.JsonObject;
 import org.locationtech.jts.geom.Geometry;
 
@@ -66,6 +67,7 @@ public class GeoPolygon {
         this.type = type;
     }
 
+    @JsonIgnore
     public JsonObject getGeometry() {
         return geometry;
     }
@@ -78,6 +80,7 @@ public class GeoPolygon {
         this.geometryObj = geometryObj;
     }
 
+    @JsonIgnore
     public Geometry getGeometryObj() {
         if(geometryObj==null) {
             try {

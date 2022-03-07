@@ -159,8 +159,8 @@ public class TestGeoJson {
     void testFindPointInPolygons2() throws IOException {
         String jsonStr = Files.readString(Paths.get("D:\\workspace\\code_challenge\\sharenow\\src\\main\\resources\\polygons.json"));
         ObjectMapper mapper = new ObjectMapper();
-        List<GeoPolygon> geometries = mapper.readValue(jsonStr,new TypeReference<List<GeoPolygon>>(){});
-        System.out.println("Ar size="+geometries.size());//154
+//        List<GeoPolygon> geometries = mapper.readValue(jsonStr,new TypeReference<List<GeoPolygon>>(){});
+//        System.out.println("Ar size="+geometries.size());//154
 
 //        double longitude = 9.32108402253,latitude=48.7508977740;
 //        Point point = new GeometryJSON().readPoint( new StringReader(

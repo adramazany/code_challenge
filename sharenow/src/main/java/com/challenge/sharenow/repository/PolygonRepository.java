@@ -14,6 +14,8 @@ import org.geotools.geojson.GeoJSONUtil;
 import org.geotools.geojson.geom.GeometryJSON;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.stereotype.Component;
 
@@ -29,12 +31,13 @@ import java.util.stream.Collectors;
 
 @Component
 public class PolygonRepository {
+    Logger logger = LoggerFactory.getLogger(PolygonRepository.class);
 
     HashMap<String,GeoPolygon> geoPolygons;
 
     public HashMap<String,GeoPolygon> getGeoPolygons() {
         if(geoPolygons ==null){
-            HashMap<String,GeoPolygon> geoPolygons=new HashMap<>();
+            geoPolygons=new HashMap<>();
             try {
                 Reader r=new InputStreamReader(new DefaultResourceLoader().getResource("polygons.json").getInputStream());
                 List<GeoPolygon> polygons = new Gson().fromJson(r, new TypeToken<ArrayList<GeoPolygon>>() {}.getType());
@@ -52,11 +55,16 @@ public class PolygonRepository {
         return getGeoPolygons().get(id);
     }
 
+    public GeoPolygon[] findAll(){
+        return getGeoPolygons().values().toArray(GeoPolygon[]::new);
+    }
+
     public GeoPolygon findIdByLngLat(Position position)  {
         try{
             return findByLngLat(position.getLongitude(), position.getLatitude());
         }catch(Exception ex){
-            ex.printStackTrace();
+//            ex.printStackTrace();
+            logger.error("polygon not found at :"+position+" , "+ex.getMessage());
         }
         return null;
     }

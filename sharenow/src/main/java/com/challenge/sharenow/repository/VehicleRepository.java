@@ -8,17 +8,10 @@ package com.challenge.sharenow.repository;
  */
 
 import com.challenge.sharenow.model.Vehicle;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.List;
 
 @Component
 public class VehicleRepository {
@@ -30,5 +23,13 @@ public class VehicleRepository {
 
     public void setVehicles(HashMap<String, Vehicle> vehicles) {
         this.vehicles = vehicles;
+    }
+
+    public Vehicle findByVin(String vin){
+        return vehicles.get(vin);
+    }
+
+    public Vehicle[] findAll(){
+        return vehicles.values().toArray(Vehicle[]::new);
     }
 }
