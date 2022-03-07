@@ -43,7 +43,7 @@ We’re looking forward to seeing your code.
 ### Issues
 * display ploygons.json
 * identify car location's pologon
-* in-memory nosql database (mybe redis) 
+* in-memory data 
 * getting cars new location
 * api of car with geo loc
 * aip of geo loc with cars in it
