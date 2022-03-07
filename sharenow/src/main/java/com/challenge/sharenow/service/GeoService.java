@@ -55,7 +55,6 @@ public class GeoService {
                 }
             }
 //          Find every vehicle's polygon and add vehicle to polygon vins
-//            Arrays.stream(resVehicles).forEach(v->v.setGeoPolygon( polygonRepository.findByLngLat(v.getPosition()) ));
             List<Vehicle> geoVehicles = Arrays.stream(resVehicles).map(
                     v -> {
                         GeoPolygon geoPolygon = polygonRepository.findIdByLngLat(v.getPosition());
