@@ -1,0 +1,18 @@
+1-
+Load the data from https://vincentarelbundock.github.io/Rdatasets/csv/DAAG/dewpoint.csv into a Pandas data frame.  It is in CSV format.  Then extract a data slice containing the maxtemp and mintemp columns.  Multiply the contents by 2 (HINT: There is a VERY SIMPLE way to do this) and put the result into a new dataframe.  Finally, print the descriptive statistics of the resulting new data frame.
+Information on this data set is available at https://vincentarelbundock.github.io/Rdatasets/doc/DAAG/dewpoint.html, (Links to an external site.) but this will probably not be very helpful.
+
+2-
+Create a one-dimensional NumPy array with the following elements:
+1, 2, 3, 4, 5, 6, 7, 8
+Reshape the array to be 2x4, and then use NumPy functions to calculate the POPULATION standard deviation of either the columns or the rows (your choice).  Print out the standard deviation you have calculated.  Then transpose the array and print the transposed array, as well as the dimensions of the transposed array (GET THEM FROM THE ARRAY using the automatic method provided by NumPy)
+
+3-
+Consider the following elements: 3, 4, 5, 6.  Write code to:
+
+    Create a list using these elements, bound to a variable called startList
+    Create a new, empty list, bound to a variable called endList.  After endList is created, it should be populated by the loop by taking each element from startList, multiplying it by 2, and adding the product to endList, resulting in endList having the elements 6, 8, 10, 12.
+    Print out startList and endList.  The loop should not modify startList; it should only use it in the calculation and in managing the loop.
+
+4-
+Write a function named results() that takes in one parameter, outcome.  If outcome is 1 or greater, then return "Good!"  If outcome is less than zero, return "Bad!"  If outcome is neither of these, return "Valid!"  RETURN the strings, do not PRINT them.
