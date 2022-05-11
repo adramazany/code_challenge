@@ -1,0 +1,9 @@
+"Name" "Mass" "Diameter" "IsOuter"
+"1" "Mercury" 0.33 4879 0
+"2" "Venus" 4.87 12104 0
+"3" "Earth" 5.97 12756 0
+"4" "Mars" 0.642 6792 0
+"5" "Jupiter" 1898 142984 1
+"6" "Saturn" 568 120536 1
+"7" "Uranus" 868 51118 1
+"8" "Neptune" 102 49528 1
