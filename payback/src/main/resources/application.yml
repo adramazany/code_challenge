@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:./payback;AUTO_SERVER=true;AUTO_SERVER_PORT=8020;DB_CLOSE_ON_EXIT=FALSE;MODE=MYSQL
+      username:
+      password:
+
+  jpa:
+#    database-platform: h2
+    show: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+#      schema-locations: classpath:schema.sql
