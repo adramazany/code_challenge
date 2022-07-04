@@ -1,0 +1,21 @@
+spring:
+    datasource:
+        url: jdbc:h2:mem:testdb;MODE=mysql
+        driverClassName: org.h2.Driver
+        username: root
+        password: root
+
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+
+
+
+bank:
+    api:
+        port: 7890
+        url: http://localhost:7890/payment/{paymentId}
+        connectTimeout: 10000
+        readTimeout: 10000
+    call:
+        fixedDelay: 10000
+
