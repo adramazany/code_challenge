@@ -1,7 +1,5 @@
 package com.payback.model;
 /*
- * @created 6/16/2022 - 4:53 PM
- * @project code_challenge
  * @author adel.ramezani (adramazany@gmail.com)
  */
 

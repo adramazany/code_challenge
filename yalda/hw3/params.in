@@ -1,0 +1,11 @@
+sigma=1.0 
+epsilon=1.0 
+m=1.0
+Lx=8.0 
+Ly=8.0
+Lz=8.0 
+ovrlap=0.8
+rho=0.5
+dt=0.001 
+Nsteps=100.0
+rcut=3.0

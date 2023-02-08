@@ -11,8 +11,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
- * @created 6/19/2022 - 7:37 PM
- * @project code_challenge
  * @author adel.ramezani (adramazany@gmail.com)
  */
 

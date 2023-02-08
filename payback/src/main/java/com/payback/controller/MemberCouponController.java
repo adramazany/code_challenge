@@ -1,7 +1,5 @@
 package com.payback.controller;
 /*
- * @created 1/28/2022 - 1:34 PM
- * @project code_challenge
  * @author adel.ramezani (adramazany@gmail.com)
  */
 

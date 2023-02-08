@@ -1,0 +1,8 @@
+[default]
+L = 8   # size of simulation
+rho = 0.5 ;  number of density
+# operational cutoff
+dcutsq = 0.64
+# Sigma
+sigma =
+mass_particle=
