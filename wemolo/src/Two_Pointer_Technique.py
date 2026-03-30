@@ -18,16 +18,97 @@ def Valid_Palindrome(st):
     #cleaned = "".join( c.lower() for c in st if c.isalnum() )
     #return cleaned == cleaned[::-1]
     i = 0
-    r = len(st)
-    while i<=r
+    r = len(st)-1
+    while i<r:
+        while not st[i].isalnum(): i+=1
+        while not st[r].isalnum(): r-=1
+        if st[i].lower() != st[r].lower():
+            return False
+        i+=1
+        r-=1
+    return True
 
+def is_palindrome(s):
+    # Only keep letters and numbers, then lowercase
+    chars = [c.lower() for c in s if c.isalnum()]
+    left, right = 0, len(chars) - 1
 
-def Reverse_String(st):
+    while left < right:
+        if chars[left] != chars[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+
+def Reverse_String(ar):
     '''Reverse an array of characters in-place.'''
+    i=0
+    r=len(ar)-1
+    while i<r:
+        tmp = ar[r]
+        ar[r] = ar[i]
+        ar[i] = tmp
+        i+=1
+        r-=1
 
-def Remove_Duplicates_from_Sorted_Array(ar):
+def reverse_string(s):
+    left, right = 0, len(s) - 1
+    while left < right:
+        s[left], s[right] = s[right], s[left] # Pythonic swap
+        left += 1
+        right -= 1
+
+def Remove_Duplicates_from_Sorted_Array(sar):
     '''Modify an array in-place to remove duplicates.'''
+    i=0
+    j=1
+    while j<len(sar):
+        if sar[i]==sar[j]:
+            del sar[j]
+        else:
+            i+=1
+            j+=1
 
-def Merge_Sorted_Arrays():
+def remove_duplicates(nums):
+    if not nums: return 0
+    slow = 0
+    for fast in range(1, len(nums)):
+        if nums[fast] != nums[slow]:
+            slow += 1
+            nums[slow] = nums[fast]
+    return slow + 1
+
+def Merge_Sorted_Arrays(sar1,sar2):
     '''Combine two sorted arrays into one.'''
+    i=0
+    j=0
+    sar = []
+    while i<len(sar1) and j<len(sar2):
+        if sar1[i]<sar2[j]:
+            sar.append(sar1[i])
+            i+=1
+        elif sar1[i]>sar2[j]:
+            sar.append(sar2[j])
+            j+=1
+        else:
+            sar.append(sar1[i])
+            i+=1
+            sar.append(sar2[j])
+            j+=1
+    if i<len(sar1):
+        sar += sar1[i:]
+    if j<len(sar2):
+        sar += sar2[j:]
+    return sar
 
+def merge(nums1, m, nums2, n):
+    # Fill from the back to avoid overwriting elements in nums1
+    p1, p2, p = m - 1, n - 1, m + n - 1
+    while p2 >= 0:
+        if p1 >= 0 and nums1[p1] > nums2[p2]:
+            nums1[p] = nums1[p1]
+            p1 -= 1
+        else:
+            nums1[p] = nums2[p2]
+            p2 -= 1
+        p -= 1

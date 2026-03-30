@@ -23,12 +23,29 @@ def Two_Sum(array, target):
         if target-n1 in s:
             return n1, target-n1
 
+def two_sum_(nums, target):
+    seen = {}  # {value: index}
+    for i, num in enumerate(nums):
+        needed = target - num
+        if needed in seen:
+            return [seen[needed], i]
+        seen[num] = i
+    return []
+
+
 def Valid_Anagram(s1,s2):
     '''
     Valid Anagram: Check if two strings have the same characters.
     :return:
     '''
     return len(s1)==len(s2) and Counter(s1)==Counter(s2)
+
+def is_anagram(s, t):
+    # Optimization: length check first
+    if len(s) != len(t): return False
+    # Pythonic way: Counter handles the character frequency map automatically
+    return Counter(s) == Counter(t)
+
 
 def First_Unique_Character(s):
     '''
@@ -39,6 +56,13 @@ def First_Unique_Character(s):
     for c,n in counter.items():
         if n==1:
             return c
+
+def first_uniq_char(s):
+    count = Counter(s)
+    for i, char in enumerate(s):
+        if count[char] == 1:
+            return i
+    return -1
 
 
 def Contains_Duplicate(ar):
@@ -53,3 +77,7 @@ def Contains_Duplicate(ar):
             return True
         seen.add(x)
     return False
+
+def contains_duplicate(nums):
+    # Set removes duplicates; if length changes, a duplicate existed
+    return len(nums) != len(set(nums))
