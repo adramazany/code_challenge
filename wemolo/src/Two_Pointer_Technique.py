@@ -12,6 +12,8 @@ Remove Duplicates from Sorted Array: Modify an array in-place to remove duplicat
 Merge Sorted Arrays: Combine two sorted arrays into one.
 
 '''
+from typing import List
+
 
 def Valid_Palindrome(st):
     '''Check if a string reads the same forward and backward after cleaning.'''
@@ -112,3 +114,27 @@ def merge(nums1, m, nums2, n):
             nums1[p] = nums2[p2]
             p2 -= 1
         p -= 1
+
+def removeDuplicatesII(nums: List[int]) -> int:
+    if not nums: return 0
+    if len(nums)<3: return len(nums)
+    slow = 0
+    for fast in range(2, len(nums)):
+        if nums[fast] != nums[slow]:
+            slow += 1
+            nums[slow+1] = nums[fast]
+    return slow+2
+
+def rotate( nums: List[int], k: int) -> None:
+    """
+    Do not return anything, modify nums in-place instead.
+    """
+    n = len(nums)
+    prev = nums[0:k]
+    tmp=[0 for i in range(k)]
+    for i in range(0,n,k):
+        for j in range(k):
+            tmp[j] = nums[(i+k+j)%n]
+            nums[(i+k+j)%n] = prev[j]
+        prev = tmp
+
